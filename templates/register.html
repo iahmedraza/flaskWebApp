@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<body>
+  <div class="d-flex justify-content-center align-items-center " style="height: 500px;">
+  <form action="/register" method="post">
+    <h1 style="text-align: center; margin: 25px;" >Register</h1>
+    <input type="text" name="name" placeholder="Name" id="regName" class="form-control" required>
+    <br>
+    <input type="email" name="email" placeholder="Email" id="regEmail" class="form-control" required>
+    <br>
+    <input type="password" name="password" placeholder="Password" id="regPassword" class="form-control" required>
+    <br>
+    <div class="d-grid gap-2 col-6 mx-auto">
+     
+      <input type="submit" class="btn btn-primary"   value="Register">
+    </div>
+    <br>
+    <a href="/">Already have an account?</a>
+    {% if error %}
+    <div class="alert alert-danger" style="margin-top: 10px;" role="alert">
+      {{ error }}
+    </div>
+    {% endif %}
+    {% if userCreated %}
+    <div class="alert alert-success" role="alert">
+      {{userCreated}}
+    </div>
+    {% endif %}
+
+    
+  </form>
+  </div>
+</body>
+</html>
+<script>
+  // function myfun() {
+  //   console.log("hello")
+  // }
+  // POST request using fetch()
+//   fetch("/register", {
+       
+//       // Adding method type
+//       method: "POST",
+  
+//       // Adding body or contents to send
+//       body: JSON.stringify( { 
+//             name:'Ali',
+//             password: 'AliRaza',
+//             email : 'ali@raza.com'
+//  }),
+       
+//       // Adding headers to the request
+//       headers: {
+//           "Content-type": "application/json; charset=UTF-8",
+//           "Access-Control-Allow-Headers": "Accept",
+//           "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Credentials": "true"
+//       }
+//   })
+   
+//   // Converting to JSON
+//   .then(response => response.json())
+   
+//   // Displaying results to console
+//   .then(json => console.log(json.message))
+  
+//   .catch((error) => {
+//   console.error('Error:', error);
+// });
+
+</script>
